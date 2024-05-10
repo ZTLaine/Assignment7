@@ -12,26 +12,6 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public boolean add(T item) {
-//        if (item != null) {
-//            if (numOfItems != items.length) {
-//                items[numOfItems] = item;
-//                numOfItems++;
-//            } else {
-//                Object[] tempItems = items;
-//                items = new Object[numOfItems * 2];
-//                for (int i = 0; i <= numOfItems - 1; i++) {
-//                    items[i] = tempItems[i];
-//                }
-//                items[numOfItems] = item;
-//                numOfItems++;
-//            }
-//            return true;
-//        }
-//        else{
-//            return false;
-//        }
-
-        /*Thank you, Roche this is a much simpler way to read the flow of the code!*/
         if (item == null) {
             return true;
         }

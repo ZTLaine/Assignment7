@@ -12,12 +12,22 @@ public class CustomArrayListTest {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
 
 //        act
-
         sut.add(15);
 
 //        assert
         assertEquals(sut.get(0), 15);
         assertEquals(sut.getSize(), 1);
+    }
+
+    @Test
+    void add_item_at_index(){
+        CustomArrayList<Integer> sut = new CustomArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            sut.add(i);
+        }
+        sut.add(6, 69);
+
+        assertEquals(sut.get(6), 69);
     }
 
 }
