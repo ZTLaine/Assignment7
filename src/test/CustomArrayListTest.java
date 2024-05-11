@@ -45,10 +45,28 @@ public class CustomArrayListTest {
         }
         sut.add(testIndex, testItem);
         sut.add(44);
-        sut.add(99, 201);
+//        sut.add(99, 201);
+        sut.add(2, 24601);
 
         assertEquals(sut.get(testIndex), testItem);
-        assertEquals(sut.getSize(), 40);
+        assertEquals(sut.get(testIndex+1), testIndex+2);
+        assertEquals(sut.getSize(), 42);
     }
+/*    @Test
+    void remove_item(){
+        CustomArrayList<Integer> sut = new CustomArrayList<>();
+        int testIndex = 69;
+//        Integer testItem = 69;
+
+        for (int i = 0; i < 100; i++) {
+            sut.add(i);
+        }
+        sut.remove(testIndex);
+//        sut.add(567856);
+
+        assertEquals(sut.get(testIndex), null);
+        assertEquals(sut.getSize(), 99);
+    }*/
+
 
 }
