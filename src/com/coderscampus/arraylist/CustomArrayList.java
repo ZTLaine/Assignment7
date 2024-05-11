@@ -30,8 +30,8 @@ public class CustomArrayList<T> implements CustomList<T> {
         if (item == null) {
             return true;
         }
-        while(index > items.length){
-            items = Arrays.copyOf(items, items.length * 2);
+        if(index > items.length){
+            throw new IndexOutOfBoundsException();
         }
 //        if (numOfItems == items.length) {
 //            items = Arrays.copyOf(items, items.length * 2);
