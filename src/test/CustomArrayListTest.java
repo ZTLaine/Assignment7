@@ -20,14 +20,35 @@ public class CustomArrayListTest {
     }
 
     @Test
-    void add_item_at_index(){
+    void add_item_at_new_index(){
         CustomArrayList<Integer> sut = new CustomArrayList<>();
-        for (int i = 0; i < 9; i++) {
+        int testIndex = 23;
+        Integer testItem = 69;
+
+        for (int i = 0; i < 10; i++) {
             sut.add(i);
         }
-        sut.add(6, 69);
+        sut.add(testIndex, testItem);
 
-        assertEquals(sut.get(6), 69);
+        assertEquals(sut.get(testIndex), testItem);
+        assertEquals(sut.getSize(), 11);
+    }
+
+    @Test
+    void add_item_at_used_index(){
+        CustomArrayList<Integer> sut = new CustomArrayList<>();
+        int testIndex = 23;
+        Integer testItem = 69;
+
+        for (int i = 0; i < 40; i++) {
+            sut.add(i);
+        }
+        sut.add(testIndex, testItem);
+        sut.add(44);
+        sut.add(99, 201);
+
+        assertEquals(sut.get(testIndex), testItem);
+        assertEquals(sut.getSize(), 40);
     }
 
 }

@@ -27,17 +27,37 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public boolean add(int index, T item) throws IndexOutOfBoundsException {
-        return false;
+        if (item == null) {
+            return true;
+        }
+        while(index > items.length){
+            items = Arrays.copyOf(items, items.length * 2);
+        }
+//        if (numOfItems == items.length) {
+//            items = Arrays.copyOf(items, items.length * 2);
+//        }
+
+        if(items[index] == null){
+            items[index] = item;
+            numOfItems++;
+        }
+        else{
+            items[index] = item;
+        }
+
+
+        return true;
     }
 
     @Override
     public int getSize() {
+//        Arrays.stream(items).count() maybe?
         return numOfItems;
     }
 
     @Override
     public T get(int index) {
-        if (index < numOfItems && index >= 0) {
+        if (index < items.length && index >= 0) {
             return (T) items[index];
         } else {
             System.out.println(index + " is not a valid index!");
