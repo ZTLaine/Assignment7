@@ -30,20 +30,26 @@ public class CustomArrayList<T> implements CustomList<T> {
         if (item == null) {
             return true;
         }
-        if(index > items.length){
+        if (index > items.length) {
             throw new IndexOutOfBoundsException();
         }
-//        if (numOfItems == items.length) {
-//            items = Arrays.copyOf(items, items.length * 2);
+        if (numOfItems == items.length) {
+            items = Arrays.copyOf(items, items.length * 2);
+        }
+
+//        if(items[index] == null){
+//            items[index] = item;
+//            numOfItems++;
+//        }
+//        else{
+//            items[index] = item;
 //        }
 
-        if(items[index] == null){
-            items[index] = item;
-            numOfItems++;
-        }
-        else{
-            items[index] = item;
-        }
+//        Object[] shiftedItems = new Object[items.length];
+//        shiftedItems = Arrays.copyOfRange(items, index, numOfItems);
+        System.arraycopy(items, index, items, index + 1, numOfItems - index);
+        items[index] = item;
+        numOfItems++;
 
 
         return true;

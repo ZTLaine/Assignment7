@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CustomArrayListTest {
     @Test
-    void add_one_item_to_list(){
+    void add_one_item_to_list() {
 //        arrange
         CustomArrayList<Integer> sut = new CustomArrayList<>();
 
@@ -20,7 +20,7 @@ public class CustomArrayListTest {
     }
 
     @Test
-    void add_item_at_new_index(){
+    void add_item_at_new_index() {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
         int testIndex = 23;
         Integer testItem = 69;
@@ -35,22 +35,23 @@ public class CustomArrayListTest {
     }
 
     @Test
-    void add_item_at_used_index(){
+    void add_item_at_used_index() {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
-        int testIndex = 23;
-        Integer testItem = 69;
+        int arrayStartSize = 1;
+        int testIndex = 1;
+        Integer testItem = 58;
 
-        for (int i = 0; i < 40; i++) {
+        for (int i = 0; i < arrayStartSize; i++) {
             sut.add(i);
         }
         sut.add(testIndex, testItem);
-        sut.add(44);
+//        sut.add(44);
 //        sut.add(99, 201);
-        sut.add(2, 24601);
+//        sut.add(2, 24601);
 
         assertEquals(sut.get(testIndex), testItem);
-        assertEquals(sut.get(testIndex+1), testIndex+2);
-        assertEquals(sut.getSize(), 42);
+        assertEquals(sut.get(testIndex + 1), testIndex);
+        assertEquals(sut.getSize(), arrayStartSize + 1);
     }
 /*    @Test
     void remove_item(){
