@@ -1,6 +1,6 @@
-//  4/19/24
+//  5/12/24
 //  Zack Laine
-//  Assignment 5
+//  Assignment 7
 
 package com.coderscampus.arraylist;
 

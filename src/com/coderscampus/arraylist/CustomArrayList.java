@@ -1,6 +1,6 @@
-//  4/19/24
+//  5/12/24
 //  Zack Laine
-//  Assignment 5
+//  Assignment 7
 
 package com.coderscampus.arraylist;
 
@@ -61,15 +61,6 @@ public class CustomArrayList<T> implements CustomList<T> {
         numOfItems--;
         items[numOfItems] = null;
 
-
         return removed;
-    }
-
-    public void printAll() {
-        for (Object item : items) {
-            if (item != null) {
-                System.out.println(item);
-            }
-        }
     }
 }

@@ -1,3 +1,7 @@
+//  5/12/24
+//  Zack Laine
+//  Assignment 7
+
 package test;
 
 import com.coderscampus.arraylist.CustomArrayList;
@@ -9,13 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class CustomArrayListTest {
     @Test
     void add_one_item_to_list() {
-//        arrange
+
         CustomArrayList<Integer> sut = new CustomArrayList<>();
 
-//        act
         sut.add(15);
 
-//        assert
         assertEquals(sut.get(0), 15);
         assertEquals(sut.getSize(), 1);
     }
@@ -26,13 +28,13 @@ public class CustomArrayListTest {
         int testIndex = 23;
         Integer testItem = 69;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 49; i++) {
             sut.add(i);
         }
         sut.add(testIndex, testItem);
 
         assertEquals(sut.get(testIndex), testItem);
-        assertEquals(sut.getSize(), 11);
+        assertEquals(sut.getSize(), 50);
     }
 
     @Test
