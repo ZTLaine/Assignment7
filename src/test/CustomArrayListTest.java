@@ -38,7 +38,8 @@ public class CustomArrayListTest {
     void add_item_at_used_index() {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
         int arrayStartSize = 20;
-        int testIndex = 20;
+        int testIndex = 19;
+        int addedCount = 0;
         Integer testItem = 58;
         Integer movedItem;
 
@@ -47,14 +48,11 @@ public class CustomArrayListTest {
         }
         movedItem = sut.get(testIndex);
         sut.add(testIndex, testItem);
-//        sut.add(44);
-//        sut.add(99, 201);
-//        sut.add(2, 24601);
+        addedCount++;
 
         assertEquals(sut.get(testIndex), testItem);
         assertEquals(sut.get(testIndex + 1), movedItem);
-        //manually appending the number of add tests I'm running, this is a poorly written test
-        assertEquals(sut.getSize(), arrayStartSize + 1);
+        assertEquals(sut.getSize(), arrayStartSize + addedCount);
     }
 /*    @Test
     void remove_item(){

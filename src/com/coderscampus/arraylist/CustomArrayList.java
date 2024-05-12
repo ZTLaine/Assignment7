@@ -37,35 +37,21 @@ public class CustomArrayList<T> implements CustomList<T> {
             items = Arrays.copyOf(items, items.length * 2);
         }
 
-//        if(items[index] == null){
-//            items[index] = item;
-//            numOfItems++;
-//        }
-//        else{
-//            items[index] = item;
-//        }
-
-//        Object[] shiftedItems = new Object[items.length];
-//        shiftedItems = Arrays.copyOfRange(items, index, numOfItems);
         System.arraycopy(items, index, items, index + 1, numOfItems - index);
         items[index] = item;
         numOfItems++;
-
 
         return true;
     }
 
     @Override
     public int getSize() {
-//        Arrays.stream(items).count() maybe?
         return numOfItems;
     }
 
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
-
         return (T) items[index];
-
     }
 
     @Override
