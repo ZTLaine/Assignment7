@@ -62,13 +62,10 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     @Override
-    public T get(int index) {
-        if (index < items.length && index >= 0) {
-            return (T) items[index];
-        } else {
-            System.out.println(index + " is not a valid index!");
-            return null;
-        }
+    public T get(int index) throws IndexOutOfBoundsException {
+
+        return (T) items[index];
+
     }
 
     @Override
