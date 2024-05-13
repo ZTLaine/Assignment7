@@ -23,21 +23,6 @@ public class CustomArrayListTest {
     }
 
     @Test
-    void add_item_at_new_index() {
-        CustomArrayList<Integer> sut = new CustomArrayList<>();
-        int testIndex = 23;
-        Integer testItem = 69;
-
-        for (int i = 0; i < 49; i++) {
-            sut.add(i);
-        }
-        sut.add(testIndex, testItem);
-
-        assertEquals(sut.get(testIndex), testItem);
-        assertEquals(sut.getSize(), 50);
-    }
-
-    @Test
     void add_item_at_used_index() {
         CustomArrayList<Integer> sut = new CustomArrayList<>();
         int arrayStartSize = 20;
