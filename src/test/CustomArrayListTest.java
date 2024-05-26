@@ -5,6 +5,7 @@
 package test;
 
 import com.coderscampus.arraylist.CustomArrayList;
+import com.coderscampus.arraylist.CustomList;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -60,5 +61,21 @@ public class CustomArrayListTest {
         assertEquals(sut.get(testIndex), movedItem);
         assertEquals(sut.getSize(), arrayStartSize + removedCount);
         assertNull(sut.get(arrayStartSize - 1));
+    }
+
+    @Test
+    public void remove_final_item(){
+        CustomList<Integer> sut = new CustomArrayList<>();
+        Integer testItem;
+
+        for (int i = 0; i < 10; i++) {
+            sut.add(i);
+        }
+
+        testItem = sut.get(8);
+        sut.remove(9);
+
+        assertEquals(sut.get(8), testItem);
+
     }
 }
